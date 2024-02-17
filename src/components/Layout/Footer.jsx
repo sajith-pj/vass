@@ -1,4 +1,4 @@
-import Styles from "@/Components/Layout/layout.module.scss";
+import Styles from "@/components/Layout/layout.module.scss";
 import Facebook from "../Icons/Facebook";
 
 import Instagram from "../Icons/Instagram";

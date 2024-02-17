@@ -1,5 +1,5 @@
 import { useSwiper, useSwiperSlide } from "swiper/react";
-import Styles from "@/Components/Slider/sldier.module.scss";
+import Styles from "@/components/Slider/sldier.module.scss";
 const SliderPagination = ({ slideLength }) => {
   const swiper = useSwiper();
   
