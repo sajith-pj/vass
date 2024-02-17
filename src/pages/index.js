@@ -1,118 +1,259 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
+import Slider from "@/components/Slider";
+import Image from "next/image";
+import { EffectFade, Autoplay } from "swiper/modules";
+import Navbar from "@/components/Layout/Navbar";
+import Styles from "./index.module.scss";
+import Footer from "@/components/Layout/Footer";
+import dvk from "@/assets/images/dvk.png";
+import ipcs from "@/assets/images/ipcs.png";
+import reliva from "@/assets/images/reliva.png";
+import stjoseph from "@/assets/images/stjoseph.png";
+import desertspring from "@/assets/images/desertsprings.webp";
 export default function Home() {
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+  const slides = [
+    () => (
+      <div className="custom-container h-screen w-full grid grid-cols-2 ">
+        <div className="flex justify-center items-start flex-col">
+          <h1 className="text-6xl font-bold mb-4">VASS Systems LLP</h1>
+          <h1 className="text-2xl font- ">
+            Your Trusted IT Consulting Partner
+          </h1>
+        </div>
+        {/* <div>
+          <Image
+            src={banner1.src}
+            width="500"
+            height="500"
+            className="w-[500px] h-[500px]"
+          />
+        </div> */}
+      </div>
+    ),
+    () => (
+      <div className=" custom-container h-screen w-full flex ">
+        <div className="flex justify-center items-start flex-col">
+          <h1 className="text-6xl font-bold mb-4 capitalize">
+            we don&apos;t just consult
+          </h1>
+          <h1 className="text-2xl  ">
+            we partner in your technological journey
+          </h1>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+    ),
+    () => (
+      <div className=" custom-container h-screen w-full flex ">
+        <div className="flex justify-center items-start flex-col">
+          <h1 className="text-6xl font-bold mb-4 capitalize">
+            Explore the possibilities
+          </h1>
+          <h1 className="text-2xl  ">
+            with us and elevate your business to new heights.
+          </h1>
+        </div>
       </div>
+    ),
+  ];
+  let partners = [dvk, ipcs, reliva, stjoseph, desertspring];
+  return (
+    <div>
+      <Navbar isAbsolute={true} />
+      <Slider
+        spaceBetween={30}
+        effect={"fade"}
+        fadeEffect={{ crossFade: true }}
+        autoplay={{
+          delay: 4000,
+        }}
+        showPagination={false}
+        modules={[EffectFade, Autoplay]}
+        className="mySwiper h-screen md:h-screen  z-[10]"
+        slides={slides}
+      />
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* HIGHLIGHTS */}
+      <div className="custom-container  py-[100px] h-full">
+        <div className="py-[100px]">
+          <h1 className="text-[36px] title after-line">Highlights</h1>
+        </div>
+        <div className="grid grid-cols-12 gap-x-12 gap-y-24">
+          <div
+            className={` col-span-12 lg:col-span-6 ${Styles["card"]} bg-[#1f1f1fa3] hover:bg-black/[0.7] shadow-md shadow-[#1f1f1fa3]  bg-primary-purple  mb-4 rounded-md flex flex-col items-start justify-center p-12 `}
+          >
+            <div className="z-[1] mt-3">
+              <h1 className="text-[30px]  font-semibold  leading-none mb-4">
+                IT Consulting Excellence
+              </h1>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+              <p className="text-white font-normal">
+                Anand, our founder, is committed to delivering top-notch IT
+                consulting services. With extensive experience, he serves as a
+                trusted advisor, providing expert guidance in IT project
+                management, support, architecture, development, and specialized
+                areas such as Python, JavaScript, API design, DevOps, and
+                security consulting.
+              </p>
+            </div>
+            <span className={Styles["outline-text"]}>01</span>
+          </div>
+          <div
+            className={`mb-4 col-span-12 lg:col-span-6  ${Styles["card"]} bg-[#1f1f1fa3] hover:bg-black/[0.7] shadow-md shadow-[#1f1f1fa3] lg:col-span-6 bg-primary-purple  mb-4 lg:mb-0 lg:mr-3 rounded-md flex flex-col items-start justify-center p-12 `}
+          >
+            <div className="z-[1] mt-3">
+              <h1 className="text-[30px]  font-semibold  leading-none mb-4">
+                Exclusive B2B Focus
+              </h1>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+              <p className="text-white font-normal">
+                VASS Systems strictly focuses on B2B collaborations, engaging
+                exclusively with IT companies and software firms. This approach
+                allows us to tailor our expertise to the unique needs and
+                challenges of our industry peers, refraining from direct
+                dealings with end customers.
+              </p>
+            </div>
+            <span className={Styles["outline-text"]}>02</span>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div
+            className={`mb-4 col-span-12 lg:col-span-7  ${Styles["card"]} bg-[#1f1f1fa3] hover:bg-black/[0.7] shadow-md shadow-[#1f1f1fa3] bg-primary-purple  mb-4 lg:mb-0 lg:mr-3 rounded-md flex flex-col items-start justify-center p-12 `}
+          >
+            <div className="z-[1] mt-3">
+              <h1 className="text-[30px]  font-semibold  leading-none mb-4">
+                Comprehensive Service Portfolio
+              </h1>
+
+              <p className="text-white font-normal">
+                Our service offerings encompass a wide range, from hourly
+                developer support and corporate training to scalable and
+                delegatable IT development models. VASS Systems is dedicated to
+                providing solutions that align with the diverse requirements of
+                our clients.
+              </p>
+            </div>
+            <span className={Styles["outline-text"]}>03</span>
+          </div>
+          <div
+            className={`mb-4 col-span-12 lg:col-span-5  ${Styles["card"]} bg-[#1f1f1fa3] hover:bg-black/[0.7] shadow-md shadow-[#1f1f1fa3] bg-primary-purple  mb-4 lg:mb-0 lg:mr-3 rounded-md flex flex-col items-start justify-center p-12 `}
+          >
+            <div className="z-[1] mt-3">
+              <h1 className="text-[30px]  font-semibold  leading-none mb-4">
+                Hybrid Development Model
+              </h1>
+
+              <p className="text-white font-normal">
+                Pioneering a hybrid model for IT development jobs from India, we
+                aim to create a scalable and efficient approach. This model
+                integrates the advantages of both local expertise and global
+                collaboration, ensuring optimal results for our clients.
+              </p>
+            </div>
+            <span className={Styles["outline-text"]}>04</span>
+          </div>
+          <div
+            className={` col-span-12   ${Styles["card"]} bg-[#1f1f1fa3] hover:bg-black/[0.7] shadow-md shadow-[#1f1f1fa3] bg-primary-purple  mb-4 lg:mb-0 lg:mr-3 rounded-md flex flex-col items-start justify-center p-12 `}
+          >
+            <div className="z-[1] mt-3">
+              <h1 className="text-[30px]  font-semibold  leading-none mb-4">
+                Hybrid Development Model
+              </h1>
+
+              <p className="text-white font-normal">
+                Pioneering a hybrid model for IT development jobs from India, we
+                aim to create a scalable and efficient approach. This model
+                integrates the advantages of both local expertise and global
+                collaboration, ensuring optimal results for our clients.
+              </p>
+            </div>
+            <span className={Styles["outline-text"]}>05</span>
+          </div>
+        </div>
       </div>
-    </main>
-  )
+      {/* HIGHLIGHTS */}
+
+      {/* flipped sections */}
+      <div className="custom-container">
+        <div className="grid grid-cols-1 md:grid-cols-2 py-[100px] ">
+          <div className="px-6">
+            <h1
+              className={` ${Styles["left-margin"]} text-[30px]  font-semibold  leading-none mb-4`}
+            >
+              Vision
+            </h1>
+
+            <p className="text-white font-normal">
+              Enjoying work-life balance, VASS Systems focuses on continuous R&D
+              in Technology, including IoT, robotics, AI, ML, Data Engineering,
+              Web3.0, and other cutting-edge technologies, driven by a group of
+              committed techies.
+            </p>
+          </div>
+          <div></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 py-[100px] ">
+          <div></div>
+          <div className="px-6">
+            <h1
+              className={` ${Styles["left-margin"]} text-[30px]  font-semibold  leading-none mb-4`}
+            >
+              Objectives and Goals
+            </h1>
+
+            <p className="text-white font-normal">
+              Moving beyond traditional time-trading IT jobs, our goal is to
+              foster a culture of IT consulting and delegate development tasks
+              without compromising productivity or end results.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 py-[100px] ">
+          <div className="px-6">
+            <h1
+              className={` ${Styles["left-margin"]} text-[30px]  font-semibold  leading-none mb-4`}
+            >
+              Revenue Generation Model
+            </h1>
+
+            <p className="text-white font-normal">
+              Our revenue is generated through hourly/monthly support for IT
+              giants in the market on a contract basis. We offer services such
+              as Technology Implementation, Digital Transformation, AMC/Cloud
+              support, and Cybersecurity packages.
+            </p>
+          </div>
+          <div></div>
+        </div>
+      </div>
+      {/* flipped sections */}
+
+      <div className="py-[100px] custom-container">
+        <h1 className="text-[36px] title after-line whitespace-nowrap">
+          Our Clients
+        </h1>
+        <div className="grid grid-cols-2 gap-7 lg:grid-cols-5 mt-4">
+          {partners.map((partner, index) => (
+            <div
+              className="h-full flex justify-center items-center bg-white rounded-xl p-3"
+              key={index}
+            >
+              <Image
+                src={partner.src}
+                className={`${
+                  index === 7 || index === 30 || index === 20
+                    ? "w-[75px]"
+                    : index === 16
+                    ? "w-[200px]"
+                    : "w-[150px]"
+                } h-auto`}
+                width="300"
+                height="200"
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
 }

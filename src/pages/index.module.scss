@@ -1,0 +1,44 @@
+.card {
+  position: relative;
+  .outline-text {
+    display: block;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    background-clip: text;
+    position: absolute;
+    text-align: center;
+    font-size: 170px;
+    font-weight: bolder;
+    background: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 1px #ffffff5a;
+    color: #2d2d2d00;
+    z-index: 0;
+  }
+  &:hover {
+    .outline-text {
+      display: block;
+      background-clip: text;
+      text-align: center;
+      background: #2d2d2d;
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 1px #2d2d2d;
+      color: #2d2d2d;
+    }
+  }
+}
+
+.left-margin {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -20px;
+    width: 5px;
+    height: 100%;
+    background: rgb(212, 211, 211);
+    border-radius: 4px;
+  }
+}

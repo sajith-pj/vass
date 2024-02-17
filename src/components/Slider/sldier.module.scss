@@ -1,0 +1,42 @@
+.slider-pagination {
+  padding: 25px 130px;
+  margin: 0 auto;
+  text-align: center;
+  float: none;
+  width: auto;
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  background-color: #ffffff;
+  bottom: 0px;
+  border-top-left-radius: 51px;
+  border-top-right-radius: 50px;
+  z-index: 2;
+  &::after {  
+    content: " ";
+    display: block;
+    position: absolute;
+    right: -30px;
+    bottom: 0;
+    top: 21px;
+    border-top-left-radius: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 45px solid #ffffff;
+    border-right: 40px solid transparent;
+  }
+  &::before {
+    content: " ";
+    display: block;
+    z-index: 99999;
+    position: absolute;
+    left: -30px;
+    bottom: 0;
+    top: 21px;
+    border-top-left-radius: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 45px solid white;
+    border-left: 40px solid transparent;
+  }
+}
